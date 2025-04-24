@@ -73,7 +73,7 @@ namespace Sufler.Forms
                     var user = db.users.FirstOrDefault(u => u.user_id == participant.id_user);
                     if (user != null)
                     {
-                        var control = new UserParticipantItem(participant, _user.user_id);
+                        var control = new UserParticipantItem(participant, _user.user_id, true);
                         control.Width = flowLayoutPanelParsipants.Width - 25;
                         control.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
                         flowLayoutPanelParsipants.Controls.Add(control);

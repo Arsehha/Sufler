@@ -98,7 +98,7 @@ namespace Sufler.Forms
                 foreach (var participant in participants)
                 {
                         // Создаем пользовательский элемент для отображения участника
-                        var userParticipantItem = new UserParticipantItem(participant, _user);
+                        var userParticipantItem = new UserParticipantItem(participant, _user, false);
 
                         // Добавляем созданный элемент в FlowLayoutPanel
                         flowLayoutPanel1.Controls.Add(userParticipantItem);

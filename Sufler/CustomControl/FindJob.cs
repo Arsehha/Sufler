@@ -48,11 +48,14 @@ namespace Sufler.CustomControl
 
         private void AddTagButton(string tagName)
         {
+            int tagButtonWidth = (flowLayoutPanelTag.Width - 200) / 4; // 4 кнопки в строку + отступы
+
             var tagButton = new Button
             {
                 Text = tagName,
-                AutoSize = true,
-                Margin = new Padding(5),
+                Width = tagButtonWidth,
+                Height = 35,
+                Margin = new Padding(3),
                 FlatStyle = FlatStyle.Flat,
                 BackColor = tagName == _selectedTag ? Color.LightBlue : Color.White,
             };
@@ -66,6 +69,7 @@ namespace Sufler.CustomControl
 
             flowLayoutPanelTag.Controls.Add(tagButton);
         }
+
 
         private void UpdateTagButtonStyles()
         {
@@ -96,7 +100,7 @@ namespace Sufler.CustomControl
                 flowLayoutPanelProject.Controls.Clear();
                 foreach (var project in projects)
                 {
-                    var item = new ProjectItemControl(project, _user.user_id);
+                    var item = new ProjectItemControl(project, _user.user_id, false);
                     item.Dock = DockStyle.Top;
                     flowLayoutPanelProject.Controls.Add(item);
                 }

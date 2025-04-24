@@ -99,11 +99,12 @@ namespace Sufler.Forms
                                         .ToList();
 
                 comboBoxTagDel.Items.Clear();
+                comboBoxTagDel.Text = "";
                 foreach (var tag in unusedTags)
                 {
                     comboBoxTagDel.Items.Add(tag.tag_name);
                 }
-                comboBoxTagDel.SelectedIndex = 0;
+                comboBoxTagDel.SelectedIndex = unusedTags.Count == 0? -1 : 0;
             }
         }
 

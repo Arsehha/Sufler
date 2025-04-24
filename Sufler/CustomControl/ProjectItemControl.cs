@@ -19,17 +19,19 @@ namespace Sufler.CustomControl
         private project _project;
         private Guid _guid = Guid.Empty;
         private bool is_closed = false;
+        private bool _show = false;
 
         public ProjectItemControl()
         {
             InitializeComponent();
         }
 
-        public ProjectItemControl(project project, Guid user)
+        public ProjectItemControl(project project, Guid user, bool show )
         {
             InitializeComponent();
             _project = project;
             _guid = user;
+            _show = show;
 
             if (_guid == project.creator) 
             {
@@ -44,8 +46,11 @@ namespace Sufler.CustomControl
                 buttonClOp.Visible = false;
                 buttonDel.Enabled = false;
                 buttonDel.Visible = false;
+                buttonRicipient.Enabled = false;
+                buttonRicipient.Visible = false;
             }
-            else
+
+            if (_show)
             {
                 // Показываем кнопку выхода только если пользователь — участник
                 using (var context = new SuflerDB())
@@ -56,9 +61,12 @@ namespace Sufler.CustomControl
                     buttonBack.Visible = isParticipant;
                     buttonBack.Enabled = isParticipant;
                 }
-
             }
-
+            else
+            {
+                buttonBack.Visible = false;
+                buttonBack.Enabled = false;
+            }
             load();
         }
 

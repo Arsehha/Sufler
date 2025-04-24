@@ -47,16 +47,17 @@
             // 
             this.flowLayoutPanelTag.AutoScroll = true;
             this.flowLayoutPanelTag.Location = new System.Drawing.Point(19, 64);
+            this.flowLayoutPanelTag.Margin = new System.Windows.Forms.Padding(5);
             this.flowLayoutPanelTag.Name = "flowLayoutPanelTag";
-            this.flowLayoutPanelTag.Size = new System.Drawing.Size(964, 208);
+            this.flowLayoutPanelTag.Size = new System.Drawing.Size(960, 161);
             this.flowLayoutPanelTag.TabIndex = 1;
             // 
             // flowLayoutPanelProject
             // 
             this.flowLayoutPanelProject.AutoScroll = true;
-            this.flowLayoutPanelProject.Location = new System.Drawing.Point(238, 279);
+            this.flowLayoutPanelProject.Location = new System.Drawing.Point(238, 233);
             this.flowLayoutPanelProject.Name = "flowLayoutPanelProject";
-            this.flowLayoutPanelProject.Size = new System.Drawing.Size(540, 318);
+            this.flowLayoutPanelProject.Size = new System.Drawing.Size(540, 364);
             this.flowLayoutPanelProject.TabIndex = 2;
             // 
             // FindJob

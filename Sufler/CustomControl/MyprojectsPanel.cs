@@ -43,7 +43,7 @@ namespace Sufler.CustomControl
                 // Если проекты есть, добавляем их на панель
                 foreach (var project in userProjects)
                 {
-                    ProjectItemControl proj = new ProjectItemControl(project, _user);
+                    ProjectItemControl proj = new ProjectItemControl(project, _user, true);
 
                     // Добавляем проект в панель
                     flowLayoutPanel1.Controls.Add(proj);

@@ -59,7 +59,7 @@ namespace Sufler.CustomControl
                 // Выводим каждый проект с помощью ProjectItemControl
                 foreach (var project in projects)
                 {
-                    var projectControl = new ProjectItemControl(project, _user);
+                    var projectControl = new ProjectItemControl(project, _user, true);
 
                     flowLayoutPanel1.Controls.Add(projectControl);
                 }

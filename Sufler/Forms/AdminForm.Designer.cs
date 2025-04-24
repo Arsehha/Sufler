@@ -139,6 +139,7 @@
             // 
             // comboBoxTagDel
             // 
+            this.comboBoxTagDel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTagDel.FormattingEnabled = true;
             this.comboBoxTagDel.Location = new System.Drawing.Point(6, 128);
             this.comboBoxTagDel.Name = "comboBoxTagDel";
@@ -158,6 +159,7 @@
             // textBoxTagNameAdd
             // 
             this.textBoxTagNameAdd.Location = new System.Drawing.Point(6, 32);
+            this.textBoxTagNameAdd.MaxLength = 25;
             this.textBoxTagNameAdd.Name = "textBoxTagNameAdd";
             this.textBoxTagNameAdd.Size = new System.Drawing.Size(150, 22);
             this.textBoxTagNameAdd.TabIndex = 2;
@@ -238,10 +240,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.flowLayoutPanelUser);
             this.panel1.Controls.Add(this.buttonAll);
             this.panel1.Controls.Add(this.buttonFound);
             this.panel1.Controls.Add(this.textBoxFound);
+            this.panel1.Controls.Add(this.flowLayoutPanelUser);
             this.panel1.Location = new System.Drawing.Point(12, 77);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(613, 361);
@@ -286,12 +288,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 450);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelProject);
             this.Controls.Add(this.panelTag);
             this.Controls.Add(this.roundedButtonTag);
             this.Controls.Add(this.roundedButtonUser);
             this.Controls.Add(this.roundedButtonProj);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelProject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "AdminForm";

@@ -14,23 +14,25 @@ namespace Sufler.CustomControl
         private participant _participant;
         private Guid _currentUserId;
         private bool _isOwner = false;
+        private bool _show = false;
 
         public UserParticipantItem()
         {
             InitializeComponent();
         }
 
-        public UserParticipantItem(participant participant, Guid currentUserId)
+        public UserParticipantItem(participant participant, Guid currentUserId, bool show)
         {
             InitializeComponent();
             Drawer.MakeControlRound(pictureBox1, 4);
             _participant = participant;
             _currentUserId = currentUserId;
+            _show = show;
 
             using (var db = new SuflerDB())
             {
                 var project = db.projects.FirstOrDefault(p => p.project_id == _participant.id_project);
-                if (project != null && project.creator == _currentUserId)
+                if (project != null && project.creator == _currentUserId && _show)
                 {
                     _isOwner = true;
                 }
