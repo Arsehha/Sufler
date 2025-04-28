@@ -85,7 +85,7 @@ namespace Sufler.CustomControl
             {
                 var projectsQuery = context.projects
                     .Include(p => p.tag) // Загрузка связанного тега
-                    .Where(p => p._checked == true && p.creator != _user.user_id); // Исключаем свои проекты
+                    .Where(p => p._checked == true && p.compleated == false && p.creator != _user.user_id); // Исключаем свои проекты
 
                 if (_selectedTag != "Все")
                 {

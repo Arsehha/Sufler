@@ -70,13 +70,7 @@ namespace Sufler.Forms
                 int participantCount = db.participants
                     .Count(p => p.id_project == _project.project_id);
 
-                // Получаем количество откликов
-                int responseCount = db.responses
-                    .Count(r => r.id_project == _project.project_id);
-
-                int totalInvolved = participantCount + responseCount;
-
-                labelCount.Text = $"Задействовано людей: {totalInvolved}";
+                labelCount.Text = $"Задействовано людей: {participantCount}";
 
                 var user = db.users.FirstOrDefault(u => u.user_id == _project.creator);
 

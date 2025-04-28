@@ -38,6 +38,15 @@ namespace Sufler.Forms
 
         }
 
+        private bool IsPhoneNumberExist(string phoneNumber)
+        {
+            using (var context = new SuflerDB())
+            {
+                var existingUser = context.users.FirstOrDefault(u => u.phone == phoneNumber);
+                return existingUser != null;  // Если пользователь найден, возвращаем true
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(first_nameTextBox.Text) || string.IsNullOrEmpty(last_nameTextBox.Text) ||
@@ -56,6 +65,12 @@ namespace Sufler.Forms
             if (last_nameTextBox.Text.Length < 4 || last_nameTextBox.Text.Length > 15)
             {
                 MessageBox.Show("Фамилия должна быть длинной от 4  до 15 символов.");
+                return;
+            }
+
+            if (IsPhoneNumberExist(phoneMaskedTextBox.Text))
+            {
+                MessageBox.Show("Пользователь с таким номером телефона уже существует.");
                 return;
             }
 
